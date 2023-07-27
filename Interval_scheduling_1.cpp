@@ -3,7 +3,6 @@
 #include<cassert>
 #include<vector>
 using namespace std;
-
 int binary_search(const vector<int>& v, int x) {
   int n = v.size();
   if (x > v[n-1] || x < v[0] ) return -1;
@@ -46,7 +45,6 @@ void GreedySchedule(vector<int>& S, vector<int>& F, vector<int>& Out){
     Out.push_back(i);
     }
   }
-
 }
 
 int main() {
