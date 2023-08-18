@@ -46,6 +46,26 @@ void GreedySchedule(vector<int>& S, vector<int>& F, vector<int>& Out){
     }
   }
 }
+void minimal_point_set_interval_cover(vector<pair<int,int>>& I , int& Out)
+{
+  // figure out this minimum size of set of points such that each interval has one point lying inside it.
+  // I is a vector of pairs of integers representing intervals.
+  // Out is the minimum size of the set of points.  
+  sort(I.begin(),I.end(),[](pair<int,int> a, pair<int,int> b){return a.second < b.second;});
+  int n = I.size();
+  int temp_end = I[0].second;
+  int temp_start = I[0].first;
+  int count = 1;
+  for(int i = 1; i < n; i++)
+  {
+    if(I[i].first >= temp_end){
+      count++;
+      temp_end = I[i].second;
+      temp_start = I[i].first;
+    }
+  }
+
+}
 
 int main() {
   vector<int> S = {1,-1,-5,2,9};
@@ -54,5 +74,6 @@ int main() {
   GreedySchedule(S,F,Schedule);
   for(auto x: Schedule) cout << x << " ";
 //  for(auto x: Schedule) cout << x << " ";
+  vector<int,int
   return 0;
 }

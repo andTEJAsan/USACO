@@ -11,7 +11,7 @@ void build_huffman(vector<int>& freq, vector<int>& left, vector<int>& right , ve
     right.resize(2*n-1);
     parent.resize(2*n-1);
     auto comparePair = [](const pair<int,int>& p, const pair<int,int>& q) {
-        return p.second < q.second ;
+        return p.second > q.second ;
         };
     priority_queue<pair<int,int>,vector<pair<int,int>> ,decltype(comparePair) > pq(comparePair);
 
